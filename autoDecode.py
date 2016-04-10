@@ -1,6 +1,6 @@
 import thread,threading
 from subprocess import call
-import os
+import os,sys
 '''
 usage:
 1. Create an object using autoDecode(filename)
@@ -9,8 +9,11 @@ usage:
 '''
 class autoDecode:
     '''run FoxTelem 200Hz decoder in the background thread'''
-    filename = ""
+    filename = None
     def run(self):
+        if not filename:
+            print "Source .wav file name was not specified. Exiting..."
+            sys.exit()
         def run_java_decoder():
             command = "java -jar autoDecode.jar"+" "+self.filename
             os.system(command)
