@@ -1,4 +1,4 @@
-Instructions:
+#AutoReceiver Instructions:
 
 Constructor: 
 	     Constructor takes in two string arguments: frequency and file name
