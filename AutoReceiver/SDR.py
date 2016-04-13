@@ -1,5 +1,5 @@
 import subprocess
-class SDR:
+class AutoReceiver:
         def __init__(self, freq, file):
                 self.freq = freq
                 self.file = file

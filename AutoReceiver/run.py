@@ -1,4 +1,4 @@
-from SDR import SDR
+from SDR import AutoReceiver
 import sys,time
 def main():
             freq = '145.98M'
@@ -9,7 +9,7 @@ def main():
                     freq = sys.argv[arg+1]
                 elif sys.argv[arg] == '-o':
                     file = sys.argv[arg+1]
-            p = SDR(freq,file)
+            p = AutoReceiver(freq,file)
             print("started")
             time.sleep(5);
             print("about to terminate")
