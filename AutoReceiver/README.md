@@ -17,4 +17,8 @@ AutoReceiver.terminate
 
 	Terminate terminates the rtl_fm command and then converts its output to a wav.
 
-	Do not call terminate more than once. I didn't implement any checking in it so it doesn't check to see if the process is still running.
+	Terminate *is* blocking, but the conversion process shouldn't take long.
+
+	Do not call terminate more than once. It doesn't check to see if the process is still running.
+
+See run.py for an example.
