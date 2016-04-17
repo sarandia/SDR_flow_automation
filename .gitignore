@@ -94,3 +94,4 @@ pyrtlsdr_temp/
 *.dll
 AutoReceiver/sox/
 AutoReceiver/rtl-sdr/
+*.bin
