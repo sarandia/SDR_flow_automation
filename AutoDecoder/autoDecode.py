@@ -1,6 +1,10 @@
 #import thread,threading
 import subprocess
 import sys
+import os
+
+localpath = os.path.dirname(__file__) + os.sep
+print(localpath)
 '''
 usage:
 1. Create an object using autoDecode(filename)
