@@ -1,7 +1,9 @@
 import subprocess
+import os
 
-RECEIVE_LOCALPATH = os.path.dirname(__file__) + os.sep
-os.environ['PATH'] += os.pathsep + RECEIVE_LOCALPATH
+SOX_LOCALPATH = os.path.dirname(__file__) + os.sep + 'sox' + os.sep
+RTL_LOCALPATH = os.path.dirname(__file__) + os.sep + 'rtl-sdr' + os.sep
+os.environ['PATH'] += os.pathsep + SOX_LOCALPATH + os.pathsep + RTL_LOCALPATH
 
 class AutoReceiver:
         def __init__(self, freq, file):

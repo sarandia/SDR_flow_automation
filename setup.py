@@ -1,10 +1,13 @@
 import pre_install
 from distutils.core import setup
 import sys
-from glob import glob
 
 DECODER_DATA_FILES = {'AutoDecoder': ['autoDecode.jar', 'spacecraft/*']}
-RECEIVER_DATA_FILES = pre_install.get_data_files()
+if '--simple-install' in sys.argv:
+    RECEIVER_DATA_FILES = pre_install.get_data_files()
+    del sys.argv[sys.argv.index('--simple-install')]
+else:
+    RECEIVER_DATA_FILES = None
 
 setup(
     name='AutoDecoder',

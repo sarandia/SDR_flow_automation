@@ -89,3 +89,8 @@ ENV/
 
 *.wav
 pyrtlsdr_temp/
+*.exe
+*.lib
+*.dll
+AutoReceiver/sox/
+AutoReceiver/rtl-sdr/
