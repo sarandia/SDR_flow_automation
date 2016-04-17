@@ -1,6 +1,6 @@
-from autoDecode import autoDecode
+from autoDecode import AutoDecode
 
-a = autoDecode("1.wav")
+a = AutoDecode("1.wav")
 a.run()
 while True:
     pass
