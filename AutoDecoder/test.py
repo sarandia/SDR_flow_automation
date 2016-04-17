@@ -1,4 +1,4 @@
-import autoDecode
+from autoDecode import AutoDecode
 
-a = autoDecode("wavtest.wav")
+a = AutoDecode("1.wav")
 a.run()
