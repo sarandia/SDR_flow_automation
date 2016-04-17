@@ -3,8 +3,8 @@ import subprocess
 import sys
 import os
 
-LOCALPATH = os.path.dirname(__file__) + os.sep
-os.environ['PATH'] += os.pathsep + LOCALPATH
+DECODE_LOCALPATH = os.path.dirname(__file__) + os.sep
+os.environ['PATH'] += os.pathsep + DECODE_LOCALPATH
 '''
 usage:
 1. Create an object using autoDecode(filename)
@@ -18,7 +18,7 @@ class AutoDecode:
         if not self.filename:
             print("Source .wav file name was not specified. Exiting...")
             sys.exit(1)
-        subprocess.Popen(['java','-jar',LOCALPATH + 'autoDecode.jar',self.filename])
+        subprocess.Popen(['java','-jar',DECODE_LOCALPATH + 'autoDecode.jar',self.filename])
 
     def __init__(self,wavfile):
         self.filename = wavfile

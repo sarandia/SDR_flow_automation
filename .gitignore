@@ -88,3 +88,4 @@ ENV/
 .ropeproject
 
 *.wav
+pyrtlsdr_temp/

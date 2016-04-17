@@ -6,6 +6,7 @@ import zipfile
 import platform
 import shutil
 from subprocess import call
+import urllib as url
 
 
 def get_data_files():
@@ -39,16 +40,20 @@ def win_setup(cleanup=False):
 
     print('Unzipping dependencies...')
     file_list = []
-    for file in zip_file.namelist():
-        if file.startswith(ZIP_PATH):
-            file_list.append(file)
-            zip_file.extract(file, TEMP_DIR)
+    for f in zip_file.namelist():
+        if f.startswith(ZIP_PATH):
+            filename = os.path.basename(f)
+            file_list.append(filename)
+            source = zip_file.open(f)
+            target = file(os.path.join('AutoReceiver', filename), "wb")
+            with source, target:
+                shutil.copyfileobj(source, target)
 
     zip_file.close()
     os.remove(TEMP_FILE)
     print('Extracted.')
 
-    file_list = [('AutoDecoder', [os.path.normpath(TEMP_DIR + file)]) for file in file_list][1:]
+    file_list = {'AutoReceiver': file_list[1:]}
     return file_list
 
 
