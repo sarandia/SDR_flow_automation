@@ -7,7 +7,7 @@ if '--simple-install' in sys.argv:
     RECEIVER_DATA_FILES = pre_install.get_data_files()
     del sys.argv[sys.argv.index('--simple-install')]
 else:
-    RECEIVER_DATA_FILES = None
+    RECEIVER_DATA_FILES = {}
 
 setup(
     name='AutoDecoder',

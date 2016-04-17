@@ -81,7 +81,7 @@ def linux_setup():
     print('Installing library rtl-sdr...')
     call('sudo apt-get install rtl-sdr', shell=True)
     call('sudo apt-get install sox', shell=True)
-    return None
+    return {}
 
 
 
