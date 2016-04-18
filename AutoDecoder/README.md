@@ -5,3 +5,5 @@ Usage:
   2. Create an autoDecode(wavfile) instance; wavfile is a string representing the path to the source audio file
   3. Call the run() method
   4. The caller program should wait for the decoding to finish or abort before exiting
+  
+Note: the `spacecraft/` directory should be copied to the current working directory from which the code is being run.
