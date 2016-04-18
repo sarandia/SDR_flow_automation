@@ -11,7 +11,7 @@ usage:
 2. Call autoDecode.run to run the decoder in the background
 3. Make sure that the caller program does not exit before the decoding thread finishes/aborts
 '''
-class AutoDecode:
+class AutoDecoder:
     '''run FoxTelem 200Hz decoder in the background thread'''
 
     def run(self):

@@ -39,8 +39,8 @@ def win_setup():
     print('Unzipping dependencies...')
     file_list = []
 
-    if not os.path.isdir('AutoReceiver' + os.sep + 'rtl-sdr'):
-        os.mkdir('AutoReceiver' + os.sep + 'rtl-sdr')
+    if not os.path.isdir('autoreceiver' + os.sep + 'rtl-sdr'):
+        os.mkdir('autoreceiver' + os.sep + 'rtl-sdr')
     zip_file = zipfile.ZipFile(TEMP_RTL_FILE, 'r')
     for f in zip_file.namelist():
         if f.startswith(RTL_PATH):
@@ -48,20 +48,20 @@ def win_setup():
             if filename:
                 file_list.append('rtl-sdr' + os.sep + filename)
                 source = zip_file.open(f)
-                target = file(os.path.join('AutoReceiver', 'rtl-sdr', filename), "wb")
+                target = file(os.path.join('autoreceiver', 'rtl-sdr', filename), "wb")
                 with source, target:
                     shutil.copyfileobj(source, target)
     zip_file.close()
 
-    if not os.path.isdir('AutoReceiver' + os.sep + 'sox'):
-        os.mkdir('AutoReceiver' + os.sep + 'sox')
+    if not os.path.isdir('autoreceiver' + os.sep + 'sox'):
+        os.mkdir('autoreceiver' + os.sep + 'sox')
     zip_file = zipfile.ZipFile(TEMP_SOX_FILE, 'r')
     for f in zip_file.namelist():
         filename = os.path.basename(f)
         if filename:
             file_list.append('sox' + os.sep + filename)
             source = zip_file.open(f)
-            target = file(os.path.join('AutoReceiver', 'sox', filename), "wb")
+            target = file(os.path.join('autoreceiver', 'sox', filename), "wb")
             with source, target:
                 shutil.copyfileobj(source, target)
     zip_file.close()
@@ -71,7 +71,7 @@ def win_setup():
     os.remove(TEMP_SOX_FILE)
     print('Extracted.')
 
-    file_list = {'AutoReceiver': file_list}
+    file_list = {'autoreceiver': file_list}
     return file_list
 
 
